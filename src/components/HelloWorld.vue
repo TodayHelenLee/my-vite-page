@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import viteLogo from '../assets/vite.svg'
 import heroImg from '../assets/hero.png'
 import vueLogo from '../assets/vue.svg'
@@ -7,13 +7,20 @@ import axios from 'axios'
 
 const count = ref(0)
 
-const response = await axios.get(
-  'https://jsonplaceholder.typicode.com/users'
-)
+const users = ref([])
 
-const users = response.data
+const getUsers = async () => {
+  const response = await axios.get(
+    'https://jsonplaceholder.typicode.com/users'
+  )
 
-console.log(users)
+  users.value = response.data;
+  console.log(users.value,1234)
+}
+
+onMounted(() => {
+  getUsers()
+})
 </script>
 
 <template>
