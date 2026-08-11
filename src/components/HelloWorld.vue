@@ -76,7 +76,7 @@ const onFinishFailed = (errorInfo: any) => {
       <a-button type="primary" html-type="submit">Submit</a-button>
     </a-form-item>
   </a-form>
-  <!-- <section id="center">
+  <section id="center">
     <div class="hero">
       <img :src="heroImg" class="base" width="170" height="179" alt="" />
       <img :src="vueLogo" class="framework" alt="Vue logo" />
@@ -159,5 +159,5 @@ const onFinishFailed = (errorInfo: any) => {
   </section>
 
   <div class="ticks"></div>
-  <section id="spacer"></section> -->
+  <section id="spacer"></section>
 </template>
