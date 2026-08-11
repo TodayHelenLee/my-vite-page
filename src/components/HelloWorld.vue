@@ -6,22 +6,6 @@ import vueLogo from '../assets/vue.svg'
 import axios from 'axios'
 
 // const count = ref(0)
-
-const users = ref([])
-
-const getUsers = async () => {
-  const response = await axios.get(
-    'https://jsonplaceholder.typicode.com/users'
-  )
-
-  users.value = response.data;
-  console.log(users.value,1234)
-}
-
-onMounted(() => {
-  getUsers()
-})
-
 interface FormState {
   username: string;
   password: string;
@@ -40,6 +24,23 @@ const onFinish = (values: any) => {
 const onFinishFailed = (errorInfo: any) => {
   console.log('Failed:', errorInfo);
 };
+
+const users = ref([])
+
+const getUsers = async () => {
+  const response = await axios.get(
+    'https://jsonplaceholder.typicode.com/users'
+  )
+
+  users.value = response.data;
+  console.log(users.value,1234)
+}
+
+onMounted(() => {
+  getUsers()
+})
+
+
 </script>
 
 <template>
